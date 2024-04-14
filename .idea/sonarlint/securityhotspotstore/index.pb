@@ -41,3 +41,5 @@ Nsrc/main/java/br/com/starwarsproject/controllers/exceptions/StandardError.java
 Ksrc/main/java/br/com/starwarsproject/controllers/exceptions/FieldError.java,7/f/7f573d0cf366b187f4e65acca9ed418ef5617e02
 u
 Esrc/main/java/br/com/starwarsproject/mappers/StandardErrorMapper.java,5/a/5acfd8a150301e42da51a6eaf441c90b5c9078ca
+7
+LICENSE,0/3/0398ccd0f49298b10a3d76a47800d2ebecd49859
