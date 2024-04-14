@@ -33,3 +33,11 @@ w
 Gsrc/main/java/br/com/starwarsproject/controllers/ProductController.java,6/c/6cec54db7cf4141b624a0a6401391bc7f63a2ebc
 h
 8src/main/java/br/com/starwarsproject/utils/HttpUtil.java,d/8/d8ae83648655f0860cec211503cb2e0f0c9ebf52
+†
+Vsrc/main/java/br/com/starwarsproject/controllers/exceptions/StoneExceptionHandler.java,5/2/52d60d3f2522b5509dadf7707e475c080a25c595
+~
+Nsrc/main/java/br/com/starwarsproject/controllers/exceptions/StandardError.java,8/c/8ca4374169a092674e28ec996e358f332aaedbb4
+{
+Ksrc/main/java/br/com/starwarsproject/controllers/exceptions/FieldError.java,7/f/7f573d0cf366b187f4e65acca9ed418ef5617e02
+u
+Esrc/main/java/br/com/starwarsproject/mappers/StandardErrorMapper.java,5/a/5acfd8a150301e42da51a6eaf441c90b5c9078ca
