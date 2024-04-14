@@ -1,0 +1,12 @@
+********************************
+******   STONE  PAYMENTS  ******
+********************************
+**** YOUR CHALLENGE DETAILS ****
+********************************
+- Java
+- Springboot
+- Postgres
+- Lombok
+- Redis(cache)
+- Docker
+- Docker-compose
