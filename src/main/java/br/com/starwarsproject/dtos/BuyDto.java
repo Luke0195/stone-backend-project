@@ -1,6 +1,7 @@
 package br.com.starwarsproject.dtos;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.validation.constraints.*;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+
 
 @Data
 @AllArgsConstructor
@@ -29,6 +31,9 @@ public class BuyDto implements Serializable {
 
     @JsonProperty("credit_card")
     private CreditCardDto creditCard;
+
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private String date;
 
 
 }

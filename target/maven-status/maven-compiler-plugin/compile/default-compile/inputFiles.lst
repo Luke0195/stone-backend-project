@@ -1,4 +1,3 @@
-/home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/dtos/ClientDto.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/domain/Product.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/repositories/ProductRepository.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/repositories/CreditCardRepository.java
@@ -8,7 +7,6 @@
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/mappers/ProductMapper.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/dtos/CreditCardDto.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/dtos/BuyDto.java
-/home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/domain/Client.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/services/impl/BuyServiceImpl.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/services/impl/ProductServiceImpl.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/controllers/exceptions/StandardError.java
@@ -17,7 +15,6 @@
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/repositories/BuyRepository.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/domain/CreditCard.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/AppApplication.java
-/home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/repositories/ClientRepository.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/services/exceptions/EntityNotExistsException.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/mappers/StandardErrorMapper.java
 /home/lucas/projects/stone-backend-project/src/main/java/br/com/starwarsproject/controllers/exceptions/StoneExceptionHandler.java

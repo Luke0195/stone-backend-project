@@ -8,7 +8,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-04-15T11:04:56-0300",
+    date = "2024-04-16T09:53:35-0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.9 (Azul Systems, Inc.)"
 )
 public class BuyMapperImpl implements BuyMapper {
@@ -26,6 +26,7 @@ public class BuyMapperImpl implements BuyMapper {
         buyDto.clientName( entity.getClientName() );
         buyDto.totalToPay( entity.getTotalToPay() );
         buyDto.creditCard( creditCardToCreditCardDto( entity.getCreditCard() ) );
+        buyDto.date( entity.getDate() );
 
         return buyDto.build();
     }
@@ -43,6 +44,7 @@ public class BuyMapperImpl implements BuyMapper {
         buy.clientName( dto.getClientName() );
         buy.creditCard( creditCardDtoToCreditCard( dto.getCreditCard() ) );
         buy.totalToPay( dto.getTotalToPay() );
+        buy.date( dto.getDate() );
 
         return buy.build();
     }

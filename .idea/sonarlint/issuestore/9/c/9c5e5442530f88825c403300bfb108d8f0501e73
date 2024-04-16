@@ -1,0 +1,6 @@
+
+g	java:S112B"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8£Ûß·î1
+H
+java:S1168+"+Return an empty collection instead of null.(¥¹ï8«Ûß·î1
+e
+java:S53611"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Ÿåé³8´Ûß·î1

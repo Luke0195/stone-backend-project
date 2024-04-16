@@ -5,9 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.Instant;
 
 @Data
 @AllArgsConstructor
@@ -33,5 +35,6 @@ public class CreditCard implements Serializable {
 
     @OneToOne(mappedBy = "creditCard")
     private Buy buy;
+
 
 }
