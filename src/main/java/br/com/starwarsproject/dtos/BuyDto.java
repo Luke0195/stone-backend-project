@@ -22,8 +22,10 @@ public class BuyDto implements Serializable {
     private String id;
 
     @JsonProperty("client_id")
+    @NotBlank(message = "The field client_id must be required")
     private String clientId;
     @JsonProperty("client_name")
+    @NotBlank(message = "the field client_name must be required")
     private String clientName;
     @JsonProperty("total_to_pay")
     @Min(1)

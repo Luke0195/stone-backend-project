@@ -25,9 +25,11 @@ public class CreditCardDto implements Serializable {
     private String cardNumber;
 
     @Size(min=1)
+    @NotNull
     private BigDecimal value;
 
     @Size(min=3, max = 3, message = "Please provided a valid cvv example: 123")
+    @NotNull
     private Integer cvv;
 
     @NotEmpty(message="The field card_holder_name must be required")
@@ -36,5 +38,6 @@ public class CreditCardDto implements Serializable {
 
     @JsonProperty("exp_date")
     @JsonFormat(pattern = "dd/mm")
+    @NotEmpty(message = "The field exp_date must be required")
     private String expDate;
 }
