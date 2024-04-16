@@ -45,6 +45,12 @@ public class BuyServiceImpl implements BuyService {
         return null;
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public List<HistoricDto> findAllHistoricsById(String id) {
+        return buyRepository.findAllHistoricByClientId(id).stream().map(BuyServiceImpl::mapResult).toList();
+    }
+
     private static HistoricDto mapResult(Object x){
             String[] result = resultByObjectMapper(x);
             String id = String.valueOf(result[0]);
@@ -55,6 +61,7 @@ public class BuyServiceImpl implements BuyService {
             String cardNumber = FormatterUtil.maskCreditCard(String.valueOf(result[5]));
             return HistoryMapper.makeHistoryDto(id, value, date, clientId, purschaseId, cardNumber);
     }
+
 
     private static String[] resultByObjectMapper(Object x){
         ObjectMapper objectMapper = new ObjectMapper();

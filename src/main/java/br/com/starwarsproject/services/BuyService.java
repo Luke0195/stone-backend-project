@@ -11,4 +11,5 @@ public interface BuyService {
 
      BuyDto create(BuyDto dto);
      List<HistoricDto> findAllHistorics();
+     List<HistoricDto> findAllHistoricsById(String id);
 }
