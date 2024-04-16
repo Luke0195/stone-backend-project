@@ -3,6 +3,7 @@ package br.com.starwarsproject.controllers.exceptions;
 import br.com.starwarsproject.mappers.StandardErrorMapper;
 import br.com.starwarsproject.services.exceptions.EntityAlreadyExistsException;
 
+import br.com.starwarsproject.services.exceptions.TransformValueException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,15 @@ public class StoneExceptionHandler {
         String pathUrl = request.getRequestURI();
         StandardError responseError = StandardErrorMapper
                 .makeStandardErrorWithNoFields(badRequest, "Entity already exists!", pathUrl, exception.getMessage());
+        return ResponseEntity.status(badRequest).body(responseError);
+    }
+
+    @ExceptionHandler(TransformValueException.class)
+    public ResponseEntity<StandardError> failToTransformValue(HttpServletRequest request, TransformValueException exception){
+        int badRequest = HttpStatus.BAD_REQUEST.value();
+        String pathUrl = request.getRequestURI();
+        StandardError responseError = StandardErrorMapper.makeStandardErrorWithNoFields(badRequest, "Fail to parse data",
+                pathUrl, exception.getMessage());
         return ResponseEntity.status(badRequest).body(responseError);
     }
 }

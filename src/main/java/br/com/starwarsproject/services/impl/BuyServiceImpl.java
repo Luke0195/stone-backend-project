@@ -4,8 +4,10 @@ import br.com.starwarsproject.domain.Buy;
 import br.com.starwarsproject.dtos.BuyDto;
 import br.com.starwarsproject.dtos.HistoricDto;
 import br.com.starwarsproject.mappers.BuyMapper;
+import br.com.starwarsproject.mappers.HistoryMapper;
 import br.com.starwarsproject.repositories.BuyRepository;
 import br.com.starwarsproject.services.BuyService;
+import br.com.starwarsproject.services.exceptions.TransformValueException;
 import br.com.starwarsproject.utils.FormatterUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -44,26 +46,25 @@ public class BuyServiceImpl implements BuyService {
     }
 
     private static HistoricDto mapResult(Object x){
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            String json = objectMapper.writeValueAsString(x).replaceAll("\"", "").replace("[", "").replace("]", "");
-            String[] result =  json.split(",");
+            String[] result = resultByObjectMapper(x);
             String id = String.valueOf(result[0]);
             String clientId = String.valueOf(result[1]);
-            String value = String.valueOf(result[2]);
+            BigDecimal value = BigDecimal.valueOf(Double.parseDouble(String.valueOf(result[2])));
             String date=  String.valueOf(result[3]);
             String purschaseId = String.valueOf(result[4]);
-            String cardNumber = String.valueOf(result[5]);
-            return HistoricDto.builder()
-                    .id(id)
-                    .clientId(clientId)
-                    .value(BigDecimal.valueOf(Double.parseDouble(value)))
-                    .date(date)
-                    .purchaseId(purschaseId)
-                    .cardNumber(FormatterUtil.maskCreditCard(cardNumber))
-                    .build();
+            String cardNumber = FormatterUtil.maskCreditCard(String.valueOf(result[5]));
+            return HistoryMapper.makeHistoryDto(id, value, date, clientId, purschaseId, cardNumber);
+    }
+
+    private static String[] resultByObjectMapper(Object x){
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            String json = objectMapper.writeValueAsString(x).replace("\"", "").replace("[", "").replace("]", "");
+            String[] result =  json.split(",");
+            return result;
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            throw new TransformValueException("Fail to convert data using objectMapper");
         }
+
     }
 }

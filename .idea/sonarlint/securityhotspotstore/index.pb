@@ -73,3 +73,7 @@ i
 9src/main/java/br/com/starwarsproject/utils/Formatter.java,1/b/1b1de3868ff8f7541fd1adea4813e69b2292f642
 m
 =src/main/java/br/com/starwarsproject/utils/FormatterUtil.java,2/f/2f370dfbbcbe6af79d8226b85f0647d03de27411
+o
+?src/main/java/br/com/starwarsproject/mappers/HistoryMapper.java,7/5/750ca29be9fe4163fc31892212230c517fd069ac
+…
+Usrc/main/java/br/com/starwarsproject/services/exceptions/TransformValueException.java,d/a/dad131b95b0b4bea4c50d217b55d2663d16752bf

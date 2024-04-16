@@ -1,6 +1,7 @@
 package br.com.starwarsproject.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,6 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@JsonPropertyOrder({ "id", "client_id", "purchase_id", "value", "date", "card_number" })
 public class HistoricDto implements Serializable {
 
     private String id;
