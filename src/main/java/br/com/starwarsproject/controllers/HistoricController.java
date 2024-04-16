@@ -19,8 +19,7 @@ import java.util.List;
 public class HistoricController {
 
     private final BuyServiceImpl service;
-
-    @Cacheable("historics") // ira armazenar num hash map com concorrência.
+ // ira armazenar num hash map com concorrência.
     @GetMapping
     public ResponseEntity<List<HistoricDto>> findAll(){
         List<HistoricDto> response = service.findAllHistorics();

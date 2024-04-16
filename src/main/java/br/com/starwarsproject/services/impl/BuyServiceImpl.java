@@ -13,6 +13,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.apache.tomcat.util.json.JSONParser;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,6 +39,11 @@ public class BuyServiceImpl implements BuyService {
     @Override
     @Transactional
     public List<HistoricDto> findAllHistorics() {
+        return buyRepository.findAllHistoric().stream().map(BuyServiceImpl::mapResult).toList();
+    }
+
+    @Cacheable("historics")
+    public List<HistoricDto> findAllHistoricsWithCache(){
         return buyRepository.findAllHistoric().stream().map(BuyServiceImpl::mapResult).toList();
     }
 

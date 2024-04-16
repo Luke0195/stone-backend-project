@@ -8,7 +8,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-04-16T09:53:35-0300",
+    date = "2024-04-16T12:04:04-0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.9 (Azul Systems, Inc.)"
 )
 public class BuyMapperImpl implements BuyMapper {

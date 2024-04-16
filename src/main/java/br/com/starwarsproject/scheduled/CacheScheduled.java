@@ -18,4 +18,5 @@ public class CacheScheduled {
         log.info("Executou: "+ LocalDateTime.now());
     }
 
+
 }

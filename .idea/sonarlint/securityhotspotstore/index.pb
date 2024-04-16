@@ -89,3 +89,11 @@ u
 Esrc/main/java/br/com/starwarsproject/controllers/CacheController.java,2/6/2629aeae23fccae167738917dd20efb035b42028
 r
 Bsrc/main/java/br/com/starwarsproject/scheduled/CacheScheduled.java,3/0/30e6d55eb972da916e2cac90a770a39a093c3e20
+g
+7src/main/java/br/com/starwarsproject/domain/UserId.java,d/5/d5a217830cbec1da328b89688a4355d9174d98b6
+e
+5src/main/java/br/com/starwarsproject/domain/User.java,7/4/74472667568d0f1bded738df75a78cc77199ee16
+i
+9src/main/java/br/com/starwarsproject/domain/enums/Ay.java,1/2/124f5a98bc4d6754c31361408f13d6c0d2d25bac
+o
+?src/main/java/br/com/starwarsproject/domain/enums/AuthRole.java,f/3/f34a03edee74c489f1d04d37c04535b47f169b3c
