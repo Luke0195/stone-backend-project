@@ -7,10 +7,13 @@ import br.com.starwarsproject.repositories.ClientRepository;
 import br.com.starwarsproject.services.UserService;
 import br.com.starwarsproject.services.exceptions.EntityAlreadyExistsException;
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -30,6 +33,12 @@ public class ClientServiceImpl implements UserService {
         client.setPassword(hashedPassword);
         clientRepository.save(client);
         return ClientMapper.INSTANCE.mapClientEntityToDto(client);
+    }
 
+    @Override
+    @Transactional
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Client client = clientRepository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        return new org.springframework.security.core.userdetails.User(client.getEmail(), client.getPassword(), new ArrayList<>());
     }
 }
