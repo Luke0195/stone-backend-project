@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: br.com.starwarsproject.services.ProductServiceTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.147 s <<< FAILURE! -- in br.com.starwarsproject.services.ProductServiceTests
-br.com.starwarsproject.services.ProductServiceTests.createShouldCreateAnProductWhenValidDataIsProvided -- Time elapsed: 0.144 s <<< ERROR!
-br.com.starwarsproject.services.exceptions.EntityAlreadyExistsException
-

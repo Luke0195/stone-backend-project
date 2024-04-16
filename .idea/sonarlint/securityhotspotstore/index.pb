@@ -117,3 +117,6 @@ f
 6src/main/java/br/com/starwarsproject/dtos/AuthDto.java,9/7/971d83121088bdb985240dc9deaeb1ba75d5543f
 g
 7src/main/java/br/com/starwarsproject/dtos/TokenDto.java,d/3/d301008342ce95df8b31790766951ce4ed176e12
+:
+
+Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
