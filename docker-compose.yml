@@ -12,7 +12,20 @@ services:
         POSTGRES_USER: root
         POSTGRES_DB: stonestarwars
      volumes:
-       - pgData:/var/lib/postgresql/data
-
+       - pgData:/var/lib/postgresql
+     networks:
+       - stone_networks
+  redisCache:
+    image: redis:latest
+    restart: always
+    volumes:
+      - cache:/data
+    ports:
+      - 6379:6379
 volumes:
   pgData:
+  cache:
+  redis_insight_volume:
+networks:
+  stone_networks:
+    driver: bridge

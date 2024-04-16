@@ -77,3 +77,15 @@ o
 ?src/main/java/br/com/starwarsproject/mappers/HistoryMapper.java,7/5/750ca29be9fe4163fc31892212230c517fd069ac
 …
 Usrc/main/java/br/com/starwarsproject/services/exceptions/TransformValueException.java,d/a/dad131b95b0b4bea4c50d217b55d2663d16752bf
+>
+diagram.drawio,8/3/837dbc0941202df742d1fb7e8dbbb5b28b22654a
+7
+HELP.md,1/a/1a273f73b7a477b0745593641bd708a6182c7ad5
+o
+?src/main/java/br/com/starwarsproject/services/CacheService.java,4/7/47c78405b7b057a684316a8fc911b897973f4474
+x
+Hsrc/main/java/br/com/starwarsproject/services/impl/CacheServiceImpl.java,e/6/e6e1285c7a579243fc7089c2f522c1de0628759b
+u
+Esrc/main/java/br/com/starwarsproject/controllers/CacheController.java,2/6/2629aeae23fccae167738917dd20efb035b42028
+r
+Bsrc/main/java/br/com/starwarsproject/scheduled/CacheScheduled.java,3/0/30e6d55eb972da916e2cac90a770a39a093c3e20

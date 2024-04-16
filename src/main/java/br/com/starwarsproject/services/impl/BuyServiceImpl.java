@@ -29,20 +29,15 @@ public class BuyServiceImpl implements BuyService {
     @Override
     @Transactional
     public BuyDto create(BuyDto dto) {
-        Buy buy  = BuyMapper.INSTANCE.mapDtoToEntity(dto);
+        Buy buy = BuyMapper.INSTANCE.mapDtoToEntity(dto);
         buyRepository.save(buy);
-        return  BuyMapper.INSTANCE.mapEntityToDto(buy);
+        return BuyMapper.INSTANCE.mapEntityToDto(buy);
     }
 
     @Override
     @Transactional
     public List<HistoricDto> findAllHistorics() {
-        try{
-            return buyRepository.findAllHistoric().stream().map(BuyServiceImpl::mapResult).toList();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
+        return buyRepository.findAllHistoric().stream().map(BuyServiceImpl::mapResult).toList();
     }
 
     @Override
@@ -51,23 +46,23 @@ public class BuyServiceImpl implements BuyService {
         return buyRepository.findAllHistoricByClientId(id).stream().map(BuyServiceImpl::mapResult).toList();
     }
 
-    private static HistoricDto mapResult(Object x){
-            String[] result = resultByObjectMapper(x);
-            String id = String.valueOf(result[0]);
-            String clientId = String.valueOf(result[1]);
-            BigDecimal value = BigDecimal.valueOf(Double.parseDouble(String.valueOf(result[2])));
-            String date=  String.valueOf(result[3]);
-            String purschaseId = String.valueOf(result[4]);
-            String cardNumber = FormatterUtil.maskCreditCard(String.valueOf(result[5]));
-            return HistoryMapper.makeHistoryDto(id, value, date, clientId, purschaseId, cardNumber);
+    private static HistoricDto mapResult(Object x) {
+        String[] result = resultByObjectMapper(x);
+        String id = String.valueOf(result[0]);
+        String clientId = String.valueOf(result[1]);
+        BigDecimal value = BigDecimal.valueOf(Double.parseDouble(String.valueOf(result[2])));
+        String date = String.valueOf(result[3]);
+        String purschaseId = String.valueOf(result[4]);
+        String cardNumber = FormatterUtil.maskCreditCard(String.valueOf(result[5]));
+        return HistoryMapper.makeHistoryDto(id, value, date, clientId, purschaseId, cardNumber);
     }
 
 
-    private static String[] resultByObjectMapper(Object x){
+    private static String[] resultByObjectMapper(Object x) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             String json = objectMapper.writeValueAsString(x).replace("\"", "").replace("[", "").replace("]", "");
-            String[] result =  json.split(",");
+            String[] result = json.split(",");
             return result;
         } catch (JsonProcessingException e) {
             throw new TransformValueException("Fail to convert data using objectMapper");
